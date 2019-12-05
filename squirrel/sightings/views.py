@@ -80,7 +80,11 @@ def add_sighting(request):
 
 def update_successful(request):
 
-    return HttpResponse('Update successfully!')
+    context={
+            'text':'Update successfully!'
+            }
+
+    return render(request,'sightings/return.html',context)
 
 
 def update_nothing(request):
