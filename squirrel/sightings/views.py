@@ -118,4 +118,7 @@ def update_sighting(request,unique_id):
 def delete(request,unique_id):
     target_squirrels = get_object_or_404(squirrel,Unique_id=unique_id)
     target_squirrels.delete()
-    return HttpResponse('Successfully delete!')
+    context={
+            'text':'Successfully delete!'
+            }
+    return render(request,'sightings/return.html',context)
