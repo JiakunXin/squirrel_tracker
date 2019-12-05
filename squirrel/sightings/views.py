@@ -89,7 +89,11 @@ def update_successful(request):
 
 def update_nothing(request):
 
-    return HttpResponse('No update happens')
+    context={
+            'text':'No update happens!'
+            }
+
+    return render(request,'sightings/return.html',context)
 
 
 def update_sighting(request,unique_id):
