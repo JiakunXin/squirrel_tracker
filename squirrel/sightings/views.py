@@ -55,8 +55,12 @@ def stats(request):
     return render(request,'sightings/stat.html',context)
 
 def thank_you(request):
+    
+    context={
+            'text':'Thank You!'
+            }
 
-    return HttpResponse('Thank you!')
+    return render(request,'sightings/return.html',context)
 
 
 def all_squirrels(request):
