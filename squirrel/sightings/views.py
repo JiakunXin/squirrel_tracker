@@ -26,18 +26,25 @@ def stats(request):
     pct_black = round(n_black/n*100,2)
     pct_gray = round(n_gray/n*100,2)
     pct_cinnamon = round(n_cinnamon/n*100,2)
+    pct_unknown_color = round((n-n_black-n_cinnamon-n_gray)/n*100,2)
 
     n_adult = len(squirrel.objects.filter(Age='Adult'))
     n_juvenile = len(squirrel.objects.filter(Age='Juvenile'))
     pct_adult = round(n_adult/n*100,2)
     pct_juvenile = round(n_juvenile/n*100,2)
+    pct_unknown_age = round((n-n_adult-n_juvenile)/n*100,2)
 
     n_gp = len(squirrel.objects.filter(Location='Ground Plane'))
     n_ag = len(squirrel.objects.filter(Location='Above Ground'))
     pct_gp = round(n_gp/n*100,2)
     pct_ag = round(n_ag/n*100,2)
 
-
+    n_ap = len(squirrel.objects.filter(Approaches=True))
+    n_indiff = len(squirrel.objects.filter(Indifferent=True))
+    n_run = len(squirrel.objects.filter(Runs_from=True))
+    pct_ap = round(n_ap/n*100,2)
+    pct_indiff = round(n_indiff/n*100,2)
+    pct_run = round(n_run/n*100,2)
 
     context = {
             'pct_am': pct_am,
@@ -50,7 +57,11 @@ def stats(request):
             'pct_plane': pct_gp,
             'pct_above': pct_ag,
             'total_number':n,
-
+            'pct_unknown_color':pct_unknown_color,
+            'pct_unknown_age':pct_unknown_age,
+            'pct_approach':pct_ap,
+            'pct_indifferent':pct_indiff,
+            'pct_runfrom':pct_run,
             }
     return render(request,'sightings/stat.html',context)
 

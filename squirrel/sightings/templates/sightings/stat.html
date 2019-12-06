@@ -1,17 +1,131 @@
-<ul>
-        <li>Total number of birds:      {{total_number}}</li>
-        <li> </li>
-        <li>Percentage of morning sighting:     {{pct_am}}%</li>
-        <li>Percentage of afternoon sighting:   {{pct_pm}}%</li>
-        <li> </li>
-        <li>Percentage of black birds:          {{pct_black}}%</li>
-        <li>Percentage of gray birds:           {{pct_gray}}%</li>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
 
-        <li>Percentage of cinnamon birds:       {{pct_cinnamon}}%</li>
-        <li> </li>
-        <li>Percentage of adults birds:         {{pct_adult}}%</li>
-        <li>Percentage of juvenile birds:       {{pct_juvenile}}%</li>
-        <li> </li>
-        <li>Percentage of on the ground:        {{pct_plane}}%</li>
-        <li>Percentage of above ground:         {{pct_above}}%</li>
-</ul>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  width:50%;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;
+}
+
+</style>
+</head>
+<body>
+<div id='first_part'>
+<h1 style="color: #2874A6;">The statistics about the Gray squirrels</h1>
+<h2 style="color: #2e6c80;">Some useful information</h2>
+<ol style="list-style: none; font-size: 14px; line-height: 32px; font-weight: bold;">
+<li style="clear: both;">Data souce: NYC Open Data</li>
+<li style="clear: both;">Preprocessing: remove the sightings with duplicated unique squirrel ID</li>
+<li style="clear: both;">Remaining number of sightings: {{total_number}}</li>
+</ol>
+</div>
+<h3 style="color: #2e6c80;">Age distribution</h3>
+<table>
+<tr>
+<th>Age</th>
+<th>Percentage</th>
+</tr>
+<tr>
+<th>Juvenile</th>
+<th>{{pct_juvenile}}%</th>
+</tr>
+<tr>
+<th>Adult</th>
+<th>{{pct_adult}}%</th>
+</tr>
+<tr>
+<th>Unknown</th>
+<th>{{pct_unknown_age}}%</th>
+</tr>
+</table>
+<h3 style="color: #2e6c80;">Color distribution</h3>
+<table>
+<tr>
+<th>Color</th>
+<th>Percentage</th>
+</tr>
+<tr>
+<th>Gray</th>
+<th>{{pct_gray}}%</th>
+</tr>
+<tr>
+<th>Black</th>
+<th>{{pct_black}}%</th>
+</tr>
+<tr>
+<th>Cinnamon</th>
+<th>{{pct_cinnamon}}%</th>
+</tr>
+<tr>
+<th>Unknown</th>
+<th>{{pct_unknown_color}}%</th>
+</tr>
+</table>
+<h3 style="color: #2e6c80;">Where the squirrel is sighted?</h3>
+<table>
+<tr>
+<th>Place</th>
+<th>Percentage</th>
+</tr>
+<tr>
+<th>On ground plance</th>
+<th>{{pct_plane}}%</th>
+</tr>
+<tr>
+<th>Above ground</th>
+<th>{{pct_above}}%</th>
+</tr>
+</table>
+<h3 style="color: #2e6c80;">Time of sighting</h3>
+<table>
+<tr>
+<th>Sighting time</th>
+<th>Percentage</th>
+</tr>
+<tr>
+<th>AM (0:00 to 12:00)</th>
+<th>{{pct_am}}%</th>
+</tr>
+<tr>
+<th>PM (12:00 to 24:00)</th>
+<th>{{pct_pm}}%</th>
+</tr>
+</table>
+<h3 style="color: #2e6c80;">How does squirrel react to human presence?</h3>
+<table>
+<tr>
+<th>Behavior</th>
+<th>Percentage</th>
+</tr>
+<tr>
+<th>Approching human</th>
+<th>{{pct_approach}}%</th>
+</tr>
+<tr>
+<th>Being indifferent</th>
+<th>{{pct_indifferent}}%</th>
+</tr>
+<tr>
+<th>Running from human</th>
+<th>{{pct_runfrom}}%</th>
+</tr>
+</table>
+<p>
+<a style="color: #5e9ca0;" href="/sightings/" class="next">Return to the menu</a>
+</p>
+</body>
+</html>

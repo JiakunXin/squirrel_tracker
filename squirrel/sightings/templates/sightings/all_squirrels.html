@@ -1,6 +1,45 @@
-<ul>
-	<h3><a href='/sightings/add/'>Click this to add a new sighting</a></h3>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  width:50%;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+</head>
+<body>
+<h1 style="color: #2874A6;">The database of all sighted gray squirrels</h1>
+<h2 style="color: #2e6c80;">Add a new sighting</h2>
+<a style="color: black"  href='/sightings/add/'>Click to add</a>
+<h2 style="color: #2e6c80;">Some statistics about the database</h2>
+<a style="color: black"  href='/sightings/stats/'>Click to see</a>
+<h2 style="color: #2e6c80;">A map that contains all sightings</h2>
+<a style="color: black"  href='/map/'>Click to see</a>
+<h2 style="color: #2e6c80;">Updata existing sighting</h2>
+<table>
+	<tr>
+		<th>Unique Squirrel ID</th>
+	</tr>
 	{% for i in squirrels %}
-	<li><a href='/sightings/{{i.Unique_id}}/'>{{i.Unique_id}}</a></li>
+	<tr>
+		<th>{{i.Unique_id}}</th>
+		<th><a href='/sightings/{{i.Unique_id}}/'>Edit</a></th>
+	</tr>
 	{% endfor %}
-</ul>
+</table>
+</body>
+</html>

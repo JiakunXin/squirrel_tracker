@@ -1,7 +1,26 @@
-<h2><a href = '/sightings/{{unique_id}}/delete'>Click this if you want to delete this sighting.</a></h2>
-<h2>The information of this sighting is listed below. You can update it if you want.</h2>
+<html>
+<head>
+<style>
+
+.helptext{
+  visibility: hidden;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+</head>
+<body>
+<h1 style="color: #2874A6;">Edit this sighting</h1>
+<a style="color: #2e6c80;" href="/sightings/" class="next">Click to discard and return to menu</a>
+<h2 style="color: #2e6c80;">Delete this sighting</h2>
+<a style="color: black" href = '/sightings/{{unique_id}}/delete'>Click to delete</a>
+<h2 style="color: #2e6c80;">Update this sighting</h2>
 <form action="/sightings/{{unique_id}}/" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit"  value="submit">
+	<input type="submit"  value="Submit">
 </form>
+</body>
+</html>
