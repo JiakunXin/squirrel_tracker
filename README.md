@@ -55,3 +55,6 @@ Link: https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Censu
 <li>Group name: Project Group 62</li>
 <li>UNIs: [jx2404, hz2651]</li>
 </ul>
+
+<h2>The link to the server running our application</h2>
+<p>Link: https://tools-for-analytics-259516.appspot.com/sightings/ </p>
